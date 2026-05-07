@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import { motion } from 'motion/react';
 import { 
   FileText, 
   Target, 
@@ -137,7 +138,9 @@ export default function App() {
         <main className="max-w-4xl mx-auto px-6 py-12 md:py-20 lg:px-12">
           
           {/* 1. Cover Section */}
-          <section id="cover" className="min-h-[85vh] flex flex-col justify-center mb-16 relative">
+          <motion.section 
+            initial={{ opacity: 0, y: 30 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true, margin: "-50px" }} transition={{ duration: 0.6, ease: "easeOut" }}
+            id="cover" className="min-h-[85vh] flex flex-col justify-center mb-16 relative">
             <div className="absolute top-10 right-0 w-72 h-72 bg-fuchsia-100 rounded-full blur-3xl opacity-50 -z-10 animate-pulse pointer-events-none" />
             <div className="uppercase tracking-widest text-fuchsia-600 font-semibold text-sm mb-4">Project Proposal</div>
             <h1 className="text-4xl md:text-5xl lg:text-6xl font-extrabold text-slate-900 mb-6 leading-[1.15]">
@@ -164,12 +167,14 @@ export default function App() {
                 <p className="text-slate-600 text-sm">Digital Strategy Team</p>
               </div>
             </div>
-          </section>
+          </motion.section>
 
           <hr className="w-full border-slate-200 mb-20 block" />
 
           {/* 2. Executive Summary */}
-          <section id="executive-summary" className="mb-24 scroll-mt-24">
+          <motion.section 
+            initial={{ opacity: 0, y: 30 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true, margin: "-50px" }} transition={{ duration: 0.6, ease: "easeOut" }}
+            id="executive-summary" className="mb-24 scroll-mt-24">
             <div className="flex items-center gap-4 mb-8">
               <div className="w-12 h-12 rounded-xl bg-fuchsia-100 flex items-center justify-center text-fuchsia-600 shrink-0">
                 <FileText className="w-6 h-6" />
@@ -187,10 +192,12 @@ export default function App() {
                 We propose designing and developing a streamlined 5-page website along with an 8–12 page corporate deck. By leveraging sophisticated design cues, strategic brand messaging, and modern lead-generation touchpoints (such as WhatsApp integration), we will build a digital ecosystem that not only honors your legacy but acts as a powerful tool to generate qualified corporate leads.
               </p>
             </div>
-          </section>
+          </motion.section>
 
           {/* 3. About House of Gurnani */}
-          <section id="about" className="mb-24 scroll-mt-24 p-8 md:p-12 bg-white border border-slate-100 rounded-3xl shadow-sm relative overflow-hidden group">
+          <motion.section 
+            initial={{ opacity: 0, y: 30 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true, margin: "-50px" }} transition={{ duration: 0.6, ease: "easeOut" }}
+            id="about" className="mb-24 scroll-mt-24 p-8 md:p-12 bg-white border border-slate-100 rounded-3xl shadow-sm relative overflow-hidden group">
             <div className="absolute top-0 right-0 w-48 h-48 bg-fuchsia-50 rounded-bl-full -z-10 transition-transform group-hover:scale-110 duration-700 ease-out" />
             <h2 className="text-3xl font-bold text-slate-900 mb-8 tracking-tight">Client Understanding: House of Gurnani</h2>
             <div className="space-y-6 text-slate-600 text-lg leading-relaxed">
@@ -204,10 +211,12 @@ export default function App() {
                 Your unique selling proposition is profound: an exceptional ability to locate and secure what others miss. Coupled with a multilingual team commanding English, Mandarin, Spanish, Arabic, Bahasa Indonesia, Hindi, and Telugu, you break down borders. Our core focus will be translating this reputation—where clients rarely look elsewhere once they partner with you—into a compelling, trustworthy digital narrative.
               </p>
             </div>
-          </section>
+          </motion.section>
 
           {/* 4. Project Goals & Outcomes */}
-          <section id="goals" className="mb-24 scroll-mt-24">
+          <motion.section 
+            initial={{ opacity: 0, y: 30 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true, margin: "-50px" }} transition={{ duration: 0.6, ease: "easeOut" }}
+            id="goals" className="mb-24 scroll-mt-24">
             <div className="flex items-center gap-4 mb-8">
               <div className="w-12 h-12 rounded-xl bg-fuchsia-100 flex items-center justify-center text-fuchsia-600 shrink-0">
                 <Target className="w-6 h-6" />
@@ -230,10 +239,12 @@ export default function App() {
                 </div>
               ))}
             </div>
-          </section>
+          </motion.section>
 
           {/* 5. Website Structure */}
-          <section id="sitemap" className="mb-24 scroll-mt-24">
+          <motion.section 
+            initial={{ opacity: 0, y: 30 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true, margin: "-50px" }} transition={{ duration: 0.6, ease: "easeOut" }}
+            id="sitemap" className="mb-24 scroll-mt-24">
             <div className="flex items-center gap-4 mb-8">
               <div className="w-12 h-12 rounded-xl bg-fuchsia-100 flex items-center justify-center text-fuchsia-600 shrink-0">
                 <Layout className="w-6 h-6" />
@@ -289,10 +300,12 @@ export default function App() {
                 </div>
               ))}
             </div>
-          </section>
+          </motion.section>
 
           {/* 6. Visual Direction */}
-          <section id="visuals" className="mb-24 scroll-mt-24">
+          <motion.section 
+            initial={{ opacity: 0, y: 30 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true, margin: "-50px" }} transition={{ duration: 0.6, ease: "easeOut" }}
+            id="visuals" className="mb-24 scroll-mt-24">
             <div className="flex items-center gap-4 mb-8">
               <div className="w-12 h-12 rounded-xl bg-fuchsia-100 flex items-center justify-center text-fuchsia-600 shrink-0">
                 <PenTool className="w-6 h-6" />
@@ -355,10 +368,12 @@ export default function App() {
                 </div>
               </div>
             </div>
-          </section>
+          </motion.section>
 
           {/* 7. Content Strategy */}
-          <section id="content" className="mb-24 scroll-mt-24">
+          <motion.section 
+            initial={{ opacity: 0, y: 30 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true, margin: "-50px" }} transition={{ duration: 0.6, ease: "easeOut" }}
+            id="content" className="mb-24 scroll-mt-24">
             <div className="flex items-center gap-4 mb-8">
               <div className="w-12 h-12 rounded-xl bg-fuchsia-100 flex items-center justify-center text-fuchsia-600 shrink-0">
                 <MessageSquare className="w-6 h-6" />
@@ -391,10 +406,12 @@ export default function App() {
                 </div>
               </div>
             </div>
-          </section>
+          </motion.section>
 
           {/* 8. Lead Generation */}
-          <section id="lead-gen" className="mb-24 scroll-mt-24">
+          <motion.section 
+            initial={{ opacity: 0, y: 30 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true, margin: "-50px" }} transition={{ duration: 0.6, ease: "easeOut" }}
+            id="lead-gen" className="mb-24 scroll-mt-24">
             <div className="flex items-center gap-4 mb-8">
               <div className="w-12 h-12 rounded-xl bg-fuchsia-100 flex items-center justify-center text-fuchsia-600 shrink-0">
                 <Settings className="w-6 h-6" />
@@ -427,10 +444,12 @@ export default function App() {
                 <p className="text-slate-600 leading-relaxed">Persistent calls to action in the main navigation, at the end of service pages, and in the footer so a conversion opportunity is always visible.</p>
               </div>
             </div>
-          </section>
+          </motion.section>
 
           {/* 9. Technical Approach */}
-          <section id="tech" className="mb-24 scroll-mt-24">
+          <motion.section 
+            initial={{ opacity: 0, y: 30 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true, margin: "-50px" }} transition={{ duration: 0.6, ease: "easeOut" }}
+            id="tech" className="mb-24 scroll-mt-24">
              <div className="flex items-center gap-4 mb-8">
               <div className="w-12 h-12 rounded-xl bg-fuchsia-100 flex items-center justify-center text-fuchsia-600 shrink-0">
                 <CodeIcon className="w-6 h-6" />
@@ -456,10 +475,12 @@ export default function App() {
                 </div>
               </div>
             </div>
-          </section>
+          </motion.section>
 
           {/* 10. Company Profile PDF */}
-          <section id="pdf" className="mb-24 scroll-mt-24">
+          <motion.section 
+            initial={{ opacity: 0, y: 30 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true, margin: "-50px" }} transition={{ duration: 0.6, ease: "easeOut" }}
+            id="pdf" className="mb-24 scroll-mt-24">
             <div className="flex items-center gap-4 mb-8">
               <div className="w-12 h-12 rounded-xl bg-fuchsia-100 flex items-center justify-center text-fuchsia-600 shrink-0">
                 <FileBox className="w-6 h-6" />
@@ -508,10 +529,12 @@ export default function App() {
                 </div>
               </div>
             </div>
-          </section>
+          </motion.section>
 
           {/* 11. Deliverables */}
-          <section id="deliverables" className="mb-24 scroll-mt-24">
+          <motion.section 
+            initial={{ opacity: 0, y: 30 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true, margin: "-50px" }} transition={{ duration: 0.6, ease: "easeOut" }}
+            id="deliverables" className="mb-24 scroll-mt-24">
              <div className="flex items-center gap-4 mb-8">
               <div className="w-12 h-12 rounded-xl bg-fuchsia-100 flex items-center justify-center text-fuchsia-600 shrink-0">
                 <ListChecks className="w-6 h-6" />
@@ -537,10 +560,12 @@ export default function App() {
                 </div>
               ))}
             </div>
-          </section>
+          </motion.section>
 
           {/* 12. Timeline */}
-          <section id="timeline" className="mb-24 scroll-mt-24">
+          <motion.section 
+            initial={{ opacity: 0, y: 30 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true, margin: "-50px" }} transition={{ duration: 0.6, ease: "easeOut" }}
+            id="timeline" className="mb-24 scroll-mt-24">
              <div className="flex items-center gap-4 mb-8">
               <div className="w-12 h-12 rounded-xl bg-fuchsia-100 flex items-center justify-center text-fuchsia-600 shrink-0">
                 <Clock className="w-6 h-6" />
@@ -571,10 +596,12 @@ export default function App() {
                 </div>
               ))}
             </div>
-          </section>
+          </motion.section>
 
           {/* 13. Investment */}
-          <section id="investment" className="mb-24 scroll-mt-24">
+          <motion.section 
+            initial={{ opacity: 0, y: 30 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true, margin: "-50px" }} transition={{ duration: 0.6, ease: "easeOut" }}
+            id="investment" className="mb-24 scroll-mt-24">
              <div className="flex items-center gap-4 mb-8">
               <div className="w-12 h-12 rounded-xl bg-fuchsia-100 flex items-center justify-center text-fuchsia-600 shrink-0">
                 <CreditCard className="w-6 h-6" />
@@ -677,10 +704,12 @@ export default function App() {
                 </div>
               </div>
             </div>
-          </section>
+          </motion.section>
 
           {/* 14. Why Us */}
-          <section id="why-us" className="mb-24 scroll-mt-24">
+          <motion.section 
+            initial={{ opacity: 0, y: 30 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true, margin: "-50px" }} transition={{ duration: 0.6, ease: "easeOut" }}
+            id="why-us" className="mb-24 scroll-mt-24">
             <h2 className="text-3xl font-bold text-slate-900 mb-8 tracking-tight">Why Partner With Us?</h2>
             <div className="bg-gradient-to-br from-fuchsia-600 to-fuchsia-800 text-white p-10 md:p-12 rounded-3xl shadow-xl relative overflow-hidden">
               {/* Decorative elements */}
@@ -699,10 +728,12 @@ export default function App() {
                 </p>
               </div>
             </div>
-          </section>
+          </motion.section>
 
           {/* 15. Next Steps */}
-          <section id="next-steps" className="mb-10 scroll-mt-24">
+          <motion.section 
+            initial={{ opacity: 0, y: 30 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true, margin: "-50px" }} transition={{ duration: 0.6, ease: "easeOut" }}
+            id="next-steps" className="mb-10 scroll-mt-24">
             <div className="bg-slate-900 text-white p-10 md:p-16 rounded-3xl text-center relative overflow-hidden shadow-2xl">
               <div className="relative z-10">
                 <h2 className="text-3xl md:text-5xl font-extrabold mb-6">Ready to Build the Legacy?</h2>
@@ -745,7 +776,7 @@ export default function App() {
                 </div>
               </div>
             </div>
-          </section>
+          </motion.section>
 
           <footer className="mt-24 pt-8 border-t border-slate-200 text-center pb-12">
             <p className="text-slate-500 flex flex-col md:flex-row items-center justify-center gap-2 mb-4">
@@ -754,7 +785,7 @@ export default function App() {
               <span>Strictly Confidential</span>
             </p>
             <p className="text-slate-400 text-sm">
-              Prepared by <a href="https://icreatepixels.com" target="_blank" rel="noopener noreferrer" className="text-fuchsia-600 hover:text-fuchsia-700 hover:underline font-semibold transition-colors">Icreatepixels</a>
+              Made by <a href="https://www.icreatepixels.in/" target="_blank" rel="noopener noreferrer" className="text-fuchsia-600 hover:text-fuchsia-700 hover:underline font-semibold transition-colors">Icreatepixels</a>
             </p>
           </footer>
 
