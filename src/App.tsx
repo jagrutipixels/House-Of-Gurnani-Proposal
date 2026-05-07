@@ -126,36 +126,56 @@ export default function App() {
           </button>
         </header>
 
-        <main className="max-w-4xl mx-auto px-6 py-12 md:py-20 lg:px-12">
+        <main className="max-w-4xl mx-auto px-4 sm:px-6 py-12 md:py-20 lg:px-12">
           
           {/* 1. Cover Section */}
           <motion.section 
             initial={{ opacity: 0, y: 30 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true, margin: "-50px" }} transition={{ duration: 0.6, ease: "easeOut" }}
-            id="cover" className="min-h-[85vh] flex flex-col justify-center mb-16 relative">
-            <div className="absolute top-10 right-0 w-72 h-72 bg-fuchsia-100 rounded-full blur-3xl opacity-50 -z-10 animate-pulse pointer-events-none" />
-            <div className="uppercase tracking-widest text-fuchsia-600 font-semibold text-sm mb-4">Project Proposal</div>
-            <h1 className="text-4xl md:text-5xl lg:text-6xl font-extrabold text-slate-900 mb-6 leading-[1.15]">
-              Website & Corporate Profile Proposal for <span className="text-fuchsia-700">House of Gurnani</span>
+            id="cover" className="min-h-[85vh] flex flex-col justify-center mb-16 relative py-10">
+            
+            {/* Background Effects */}
+            <div className="absolute inset-0 bg-[linear-gradient(to_right,#8080800a_1px,transparent_1px),linear-gradient(to_bottom,#8080800a_1px,transparent_1px)] bg-[size:14px_24px] -z-20 [mask-image:radial-gradient(ellipse_60%_50%_at_50%_0%,#000_70%,transparent_100%)]"></div>
+            <div className="absolute top-0 right-10 w-96 h-96 bg-fuchsia-400/10 rounded-full blur-3xl opacity-60 -z-10 animate-pulse pointer-events-none" />
+            <div className="absolute bottom-20 left-10 w-72 h-72 bg-blue-400/10 rounded-full blur-3xl opacity-60 -z-10 animate-pulse delay-700 pointer-events-none" />
+            
+            <div className="flex items-center gap-3 mb-6">
+              <span className="px-3 py-1 rounded-full bg-slate-900 text-white text-xs font-bold tracking-widest uppercase shadow-sm">
+                Confidential
+              </span>
+              <span className="uppercase tracking-widest text-fuchsia-600 font-bold text-sm">Project Proposal</span>
+            </div>
+            
+            <h1 className="text-5xl md:text-6xl lg:text-7xl font-extrabold text-slate-900 mb-8 leading-[1.1] tracking-tight">
+              Website & Corporate Profile Proposal for <br className="hidden md:block"/>
+              <span className="text-transparent bg-clip-text bg-gradient-to-r from-fuchsia-600 via-purple-600 to-indigo-600">House of Gurnani</span>
             </h1>
-            <p className="text-xl md:text-2xl text-slate-600 mb-10 max-w-2xl font-light leading-relaxed">
+            
+            <p className="text-xl md:text-2xl text-slate-500 font-light max-w-2xl mb-16 leading-relaxed">
               Elevating your global B2B footprint through targeted digital design and authoritative storytelling.
             </p>
-            <div className="flex flex-col sm:flex-row gap-6 sm:gap-8 mt-4 p-6 md:p-8 bg-white rounded-2xl shadow-sm border border-slate-100 items-start sm:items-center justify-between lg:justify-start">
-              <div className="w-full sm:w-auto">
-                <p className="text-xs tracking-wider uppercase text-slate-400 font-bold mb-1">Prepared For</p>
-                <p className="text-lg font-bold text-slate-800">Kunal & Partner</p>
-                <p className="text-slate-600 text-sm">House of Gurnani</p>
-              </div>
-              <div className="hidden sm:block w-px h-12 bg-slate-200"></div>
-              <div className="w-full sm:w-auto">
-                <p className="text-xs tracking-wider uppercase text-slate-400 font-bold mb-1">Date</p>
-                <p className="text-lg font-bold text-slate-800">{new Date().toLocaleDateString('en-IN', { day: 'numeric', month: 'long', year: 'numeric' })}</p>
-              </div>
-              <div className="hidden sm:block w-px h-12 bg-slate-200"></div>
-              <div className="w-full sm:w-auto">
-                <p className="text-xs tracking-wider uppercase text-slate-400 font-bold mb-1">Prepared By</p>
-                <p className="text-lg font-bold text-slate-800">Icreatepixels</p>
-                <p className="text-slate-600 text-sm">Digital Strategy Team</p>
+
+            <div className="relative p-[1px] rounded-3xl bg-gradient-to-b from-slate-200 to-slate-100 max-w-3xl shadow-sm">
+              <div className="grid sm:grid-cols-3 gap-8 bg-white/60 backdrop-blur-md p-8 md:p-10 rounded-[23px]">
+                <div className="flex flex-col gap-1">
+                  <p className="text-xs font-bold text-slate-400 uppercase tracking-wider flex items-center gap-2">
+                    <Target className="w-3 h-3"/> Prepared For
+                  </p>
+                  <p className="font-bold text-slate-900 text-lg">Kunal & Partner</p>
+                  <p className="text-slate-500 text-sm font-medium">House of Gurnani</p>
+                </div>
+                <div className="sm:border-l sm:border-slate-200/60 sm:pl-8 flex flex-col gap-1">
+                  <p className="text-xs font-bold text-slate-400 uppercase tracking-wider flex items-center gap-2">
+                    <Clock className="w-3 h-3"/> Date
+                  </p>
+                  <p className="font-bold text-slate-900 text-lg">{new Date().toLocaleDateString('en-IN', { day: 'numeric', month: 'long', year: 'numeric' })}</p>
+                </div>
+                <div className="sm:border-l sm:border-slate-200/60 sm:pl-8 flex flex-col gap-1">
+                  <p className="text-xs font-bold text-slate-400 uppercase tracking-wider flex items-center gap-2">
+                    <PenTool className="w-3 h-3"/> Prepared By
+                  </p>
+                  <p className="font-bold text-slate-900 text-lg">Icreatepixels</p>
+                  <p className="text-slate-500 text-sm font-medium">Digital Strategy</p>
+                </div>
               </div>
             </div>
           </motion.section>
@@ -200,7 +220,7 @@ export default function App() {
               We propose a tightly focused approach that combines premium visual design, authoritative writing, and frictionless lead generation to act as a 24/7 digital salesperson for your global operations.
             </p>
 
-            <div className="grid md:grid-cols-2 gap-6 bg-white p-8 rounded-3xl border border-slate-100 shadow-sm">
+            <div className="grid md:grid-cols-2 gap-6 sm:gap-8 bg-white p-6 sm:p-8 rounded-3xl border border-slate-100 shadow-sm">
               <div className="space-y-4">
                 <h3 className="text-xl font-bold text-slate-900 flex items-center gap-2">
                   <div className="w-8 h-8 rounded-full bg-fuchsia-50 text-fuchsia-600 flex items-center justify-center"><Layout className="w-4 h-4"/></div>
@@ -302,7 +322,7 @@ export default function App() {
             </div>
             
             <div className="bg-slate-900 text-white rounded-3xl overflow-hidden mb-6 shadow-2xl">
-              <div className="p-8 md:p-10 border-b border-white/10">
+              <div className="p-6 sm:p-8 md:p-10 border-b border-white/10">
                 <h3 className="text-2xl font-bold mb-8">Project Investment Scope</h3>
                 <ul className="space-y-0">
                   {[
@@ -328,7 +348,7 @@ export default function App() {
                 </ul>
               </div>
               
-              <div className="bg-slate-950 p-8 md:p-10">
+              <div className="bg-slate-950 p-6 sm:p-8 md:p-10">
                 <h4 className="font-semibold text-slate-400 mb-6 uppercase tracking-widest text-sm">Standard Payment Milestones</h4>
                 <div className="grid sm:grid-cols-3 gap-6">
                    <div className="bg-slate-800/80 border border-slate-700/50 p-6 rounded-2xl text-center">
@@ -348,7 +368,7 @@ export default function App() {
             </div>
             <p className="text-sm text-slate-500 italic px-4 mb-10">*All statutory taxes applicable extra. Third-party costs (e.g., domain registration, server hosting) are not included unless specified.</p>
 
-            <div className="bg-white border border-slate-200 p-8 md:p-10 rounded-3xl shadow-sm mt-8">
+            <div className="bg-white border border-slate-200 p-6 sm:p-8 md:p-10 rounded-3xl shadow-sm mt-8">
               <h3 className="text-2xl font-bold text-slate-900 mb-6">What Goes Into This Work?</h3>
               <p className="text-slate-600 mb-8 text-lg leading-relaxed">
                 Building a website that acts as a 24/7 salesperson requires a lot more than just putting pages on the internet. Here is a simple breakdown of the effort and expertise required at each step to ensure we deliver a premium, high-performing asset for House of Gurnani, which justifies the investment:
@@ -405,7 +425,7 @@ export default function App() {
             
             <h2 className="text-3xl font-bold text-slate-900 mb-8 tracking-tight">Why Partner With Us?</h2>
             
-            <div className="bg-gradient-to-br from-fuchsia-600 to-fuchsia-800 text-white p-10 md:p-12 mb-10 rounded-3xl shadow-xl relative overflow-hidden">
+            <div className="bg-gradient-to-br from-fuchsia-600 to-fuchsia-800 text-white p-6 sm:p-10 md:p-12 mb-10 rounded-3xl shadow-xl relative overflow-hidden">
               {/* Decorative elements */}
               <div className="absolute top-0 right-0 w-64 h-64 bg-white/10 rounded-full blur-2xl -translate-y-1/2 translate-x-1/2" />
               <div className="absolute bottom-0 left-0 w-64 h-64 bg-black/10 rounded-full blur-2xl translate-y-1/2 -translate-x-1/4" />
@@ -423,7 +443,7 @@ export default function App() {
               </div>
             </div>
 
-            <div className="bg-slate-900 text-white p-10 md:p-16 rounded-3xl text-center relative overflow-hidden shadow-2xl">
+            <div className="bg-slate-900 text-white p-6 sm:p-10 md:p-16 rounded-3xl text-center relative overflow-hidden shadow-2xl">
               <div className="relative z-10">
                 <h2 className="text-3xl md:text-5xl font-extrabold mb-6">Ready to Build the Legacy?</h2>
                 <p className="text-slate-400 text-xl font-light mb-12 max-w-2xl mx-auto">
@@ -485,7 +505,7 @@ export default function App() {
       {showScrollTop && (
         <button
           onClick={scrollToTop}
-          className="fixed bottom-8 right-8 p-4 bg-slate-900 text-white rounded-full shadow-lg hover:bg-fuchsia-600 hover:shadow-fuchsia-500/25 transition-all z-50 group"
+          className="fixed bottom-6 right-6 lg:bottom-8 lg:right-8 p-3 lg:p-4 bg-slate-900 text-white rounded-full shadow-lg hover:bg-fuchsia-600 hover:shadow-fuchsia-500/25 transition-all z-50 group"
           aria-label="Go to top"
         >
           <ArrowUp className="w-6 h-6 group-hover:-translate-y-1 transition-transform" />
