@@ -69,19 +69,10 @@ export default function App() {
   const navItems = [
     { id: 'cover', label: 'Cover' },
     { id: 'executive-summary', label: 'Executive Summary' },
-    { id: 'about', label: 'Client Understanding' },
-    { id: 'goals', label: 'Goals & Outcomes' },
-    { id: 'sitemap', label: 'Website Structure' },
-    { id: 'visuals', label: 'Visual Direction' },
-    { id: 'content', label: 'Content Strategy' },
-    { id: 'lead-gen', label: 'Lead Generation' },
-    { id: 'tech', label: 'Technical Approach' },
-    { id: 'pdf', label: 'Company Profile PDF' },
-    { id: 'deliverables', label: 'Project Deliverables' },
-    { id: 'timeline', label: 'Timelines' },
-    { id: 'investment', label: 'Investment & Terms' },
-    { id: 'why-us', label: 'Why Choose Us' },
-    { id: 'next-steps', label: 'Next Steps' },
+    { id: 'strategy', label: 'Project Strategy & Approach' },
+    { id: 'timeline', label: 'Timeline' },
+    { id: 'investment', label: 'Investment & Scope' },
+    { id: 'next-steps', label: 'Why Us & Next Steps' },
   ];
 
   return (
@@ -194,375 +185,76 @@ export default function App() {
             </div>
           </motion.section>
 
-          {/* 3. About House of Gurnani */}
+                    {/* 3. Project Strategy & Approach */}
           <motion.section 
             initial={{ opacity: 0, y: 30 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true, margin: "-50px" }} transition={{ duration: 0.6, ease: "easeOut" }}
-            id="about" className="mb-24 scroll-mt-24 p-8 md:p-12 bg-white border border-slate-100 rounded-3xl shadow-sm relative overflow-hidden group">
-            <div className="absolute top-0 right-0 w-48 h-48 bg-fuchsia-50 rounded-bl-full -z-10 transition-transform group-hover:scale-110 duration-700 ease-out" />
-            <h2 className="text-3xl font-bold text-slate-900 mb-8 tracking-tight">Client Understanding: House of Gurnani</h2>
-            <div className="space-y-6 text-slate-600 text-lg leading-relaxed">
-              <p>
-                Understanding House of Gurnani means understanding the power of a handshake that bridges continents. Founded in 1998 by Kunal and partner, the firm was born from an innate flair for networking and relationship-building. Today, those relationships span decades, driving operations across key global markets including India, China, Panama, Indonesia, South Africa, the UAE, the USA, and Singapore.
-              </p>
-              <p className="border-l-4 border-fuchsia-600 pl-6 py-2 my-8 font-medium text-slate-800 bg-fuchsia-50/50 rounded-r-xl">
-                What truly sets House of Gurnani apart is your internal gauge for success. Rather than benchmarking against competitors, you fiercely <strong>"compete with your past"</strong>—ensuring every delivery is superior to the last. This relentless pursuit of excellence is backed by stringent external audits and a strong commitment to quality assurance.
-              </p>
-              <p>
-                Your unique selling proposition is profound: an exceptional ability to locate and secure what others miss. Coupled with a multilingual team commanding English, Mandarin, Spanish, Arabic, Bahasa Indonesia, Hindi, and Telugu, you break down borders. Our core focus will be translating this reputation—where clients rarely look elsewhere once they partner with you—into a compelling, trustworthy digital narrative.
-              </p>
-            </div>
-          </motion.section>
-
-          {/* 4. Project Goals & Outcomes */}
-          <motion.section 
-            initial={{ opacity: 0, y: 30 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true, margin: "-50px" }} transition={{ duration: 0.6, ease: "easeOut" }}
-            id="goals" className="mb-24 scroll-mt-24">
+            id="strategy" className="mb-24 scroll-mt-24">
             <div className="flex items-center gap-4 mb-8">
               <div className="w-12 h-12 rounded-xl bg-fuchsia-100 flex items-center justify-center text-fuchsia-600 shrink-0">
                 <Target className="w-6 h-6" />
               </div>
-              <h2 className="text-3xl font-bold text-slate-900 tracking-tight">Project Goals & Outcomes</h2>
+              <h2 className="text-3xl font-bold text-slate-900 tracking-tight">Project Strategy & Approach</h2>
             </div>
-            <div className="grid md:grid-cols-2 gap-4 lg:gap-6">
-              {[
-                "Establish a credible, modern online presence that precisely reflects your decades-long legacy and global B2B operations.",
-                "Clearly articulate core services (Import–Export, Corporate Investment Consulting) and prime specialisations (Food, Printing, Manufacturing).",
-                "Build undeniable digital trust through strategic storytelling highlighting certifications, audits, multi-lingual capabilities, and long-term client relationships.",
-                "Enable frictionless lead capture and immediate enquiries via strategically placed WhatsApp integrations and online forms.",
-                "Deliver a concise, impactful PDF company profile—perfectly aligned with the website—to be shared seamlessly with prospects and stakeholders."
-              ].map((goal, idx) => (
-                <div key={idx} className={`flex items-start gap-4 p-6 bg-white rounded-2xl border border-slate-100 shadow-sm transition-all hover:shadow-md hover:border-fuchsia-200 ${idx === 4 ? 'md:col-span-2 lg:col-span-1' : ''}`}>
-                  <div className="flex-shrink-0 w-8 h-8 rounded-full bg-fuchsia-100 text-fuchsia-600 flex items-center justify-center font-bold text-sm">
-                    {idx + 1}
-                  </div>
-                  <p className="text-slate-700 leading-relaxed font-medium">{goal}</p>
-                </div>
-              ))}
-            </div>
-          </motion.section>
-
-          {/* 5. Website Structure */}
-          <motion.section 
-            initial={{ opacity: 0, y: 30 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true, margin: "-50px" }} transition={{ duration: 0.6, ease: "easeOut" }}
-            id="sitemap" className="mb-24 scroll-mt-24">
-            <div className="flex items-center gap-4 mb-8">
-              <div className="w-12 h-12 rounded-xl bg-fuchsia-100 flex items-center justify-center text-fuchsia-600 shrink-0">
-                <Layout className="w-6 h-6" />
-              </div>
-              <h2 className="text-3xl font-bold text-slate-900 tracking-tight">Proposed Website Structure</h2>
-            </div>
+            
             <p className="text-xl text-slate-600 mb-10 leading-relaxed">
-              We propose a tightly focused, high-impact <strong>5-page architecture</strong> designed to guide corporate visitors from initial awareness to direct enquiry.
+              We propose a tightly focused approach that combines premium visual design, authoritative writing, and frictionless lead generation to act as a 24/7 digital salesperson for your global operations.
             </p>
-            
-            <div className="space-y-6">
-              {[
-                {
-                  title: "Home",
-                  id: "01",
-                  desc: "The primary landing page serving as digital headquarters.",
-                  details: "Features a strong hero section highlighting global reach and legacy. Includes key statistics (years of experience, countries served), a snapshot of the 'needle in a haystack' USP, and clear pathways to services. Prominent CTAs will drive immediate engagement."
-                },
-                {
-                  title: "About Us",
-                  id: "02",
-                  desc: "The heartbeat of the brand narrative.",
-                  details: "Unpacks the House of Gurnani story since 1998. Highlights the founder's vision, the 'compete with our past' philosophy, linguistic capabilities (7 languages), and quality commitments (annual audits, pending ISO). Built to foster deep trust."
-                },
-                {
-                  title: "Services",
-                  id: "03",
-                  desc: "Detailed breakdown of core offerings.",
-                  details: "Clearly delineates Import–Export solutions and Corporate Investment Consulting. Emphasises vendor flexibility (client's choice vs. vetted network) and showcases the rigorous standards applied to service delivery."
-                },
-                {
-                  title: "Industries & Expertise",
-                  id: "04",
-                  desc: "Demonstrating sector-specific authority.",
-                  details: "Dedicated focus on the Food, Printing, and Manufacturing sectors. This page will reassure sector-specific B2B buyers that House of Gurnani deeply understands their unique logistical and consulting needs."
-                },
-                {
-                  title: "Contact & Enquiries",
-                  id: "05",
-                  desc: "The main conversion hub.",
-                  details: "Provides direct communication channels including interactive maps of global footprints, detailed enquiry forms, and one-click WhatsApp integration for rapid response."
-                }
-              ].map((page) => (
-                <div key={page.id} className="bg-white border focus-within:ring-2 ring-fuchsia-400 border-slate-200 p-6 md:p-8 rounded-2xl shadow-sm hover:shadow-md transition-shadow flex flex-col md:flex-row gap-6 md:items-start group">
-                  <div className="w-16 flex-shrink-0">
-                    <span className="text-4xl font-extrabold text-slate-100 group-hover:text-fuchsia-100 transition-colors">{page.id}</span>
-                  </div>
-                  <div>
-                    <h3 className="text-2xl font-bold text-slate-900 mb-2">{page.title}</h3>
-                    <p className="font-semibold text-fuchsia-600 mb-3">{page.desc}</p>
-                    <p className="text-slate-600 leading-relaxed">{page.details}</p>
-                  </div>
-                </div>
-              ))}
-            </div>
-          </motion.section>
 
-          {/* 6. Visual Direction */}
-          <motion.section 
-            initial={{ opacity: 0, y: 30 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true, margin: "-50px" }} transition={{ duration: 0.6, ease: "easeOut" }}
-            id="visuals" className="mb-24 scroll-mt-24">
-            <div className="flex items-center gap-4 mb-8">
-              <div className="w-12 h-12 rounded-xl bg-fuchsia-100 flex items-center justify-center text-fuchsia-600 shrink-0">
-                <PenTool className="w-6 h-6" />
-              </div>
-              <h2 className="text-3xl font-bold text-slate-900 tracking-tight">Visual Direction & Branding</h2>
-            </div>
-            <div className="grid lg:grid-cols-2 gap-10">
-              <div className="space-y-6 text-slate-600 text-lg leading-relaxed">
-                <p>
-                  Taking inspiration from modern, corporate B2B layouts, the visual identity will balance global authority with the unique House of Gurnani flair. The aesthetic will be exceptionally clean, heavily utilising whitespace to let content breathe and signify premium positioning.
+            <div className="grid md:grid-cols-2 gap-6 bg-white p-8 rounded-3xl border border-slate-100 shadow-sm">
+              <div className="space-y-4">
+                <h3 className="text-xl font-bold text-slate-900 flex items-center gap-2">
+                  <div className="w-8 h-8 rounded-full bg-fuchsia-50 text-fuchsia-600 flex items-center justify-center"><Layout className="w-4 h-4"/></div>
+                  5-Page Digital HQ
+                </h3>
+                <p className="text-slate-600 leading-relaxed text-sm">
+                  A focused, high-impact architecture (Home, About, Services, Industries, Contact) designed to guide corporate visitors from initial awareness to direct enquiry.
                 </p>
-                <div className="bg-white p-6 md:p-8 rounded-2xl border border-slate-200 shadow-sm">
-                  <h4 className="font-bold text-slate-900 mb-6 text-xl">Proposed Brand Palette</h4>
-                  
-                  <div className="flex items-center gap-4 mb-6">
-                    <div className="w-16 h-16 rounded-2xl bg-fuchsia-600 shadow-lg shadow-fuchsia-600/30"></div>
-                    <div>
-                      <p className="font-bold text-slate-900 text-lg">Signature Magenta</p>
-                      <p className="text-sm text-slate-500">Primary Accent & Driving Colour</p>
-                    </div>
-                  </div>
-                  
-                  <div className="flex gap-3 pt-6 border-t border-slate-100">
-                    <div className="flex-1 space-y-2">
-                       <div className="h-10 rounded-lg bg-slate-900"></div>
-                       <p className="text-xs font-semibold text-center text-slate-500 uppercase tracking-widest">Slate</p>
-                    </div>
-                    <div className="flex-1 space-y-2">
-                       <div className="h-10 rounded-lg bg-slate-100 border border-slate-200"></div>
-                       <p className="text-xs font-semibold text-center text-slate-500 uppercase tracking-widest">Bone</p>
-                    </div>
-                    <div className="flex-1 space-y-2">
-                       <div className="h-10 rounded-lg bg-white border border-slate-200"></div>
-                       <p className="text-xs font-semibold text-center text-slate-500 uppercase tracking-widest">Clean</p>
-                    </div>
-                  </div>
-                  <p className="text-sm mt-6 text-slate-600">
-                    Magenta will act as an elegant, striking highlighter against these professional neutrals rather than overwhelming the eye.
-                  </p>
-                </div>
-              </div>
-              <div className="space-y-6 text-slate-600 text-lg leading-relaxed pt-2 lg:pt-0">
-                <div className="mb-6">
-                  <h4 className="font-bold text-slate-900 text-xl mb-3 flex items-center gap-2">
-                    <div className="w-2 h-2 rounded-full bg-fuchsia-600"></div> Imagery Strategy
-                  </h4>
-                  <p className="pl-4 border-l border-slate-200">Curated, high-end stock and AI-assisted aesthetics representing global trade, expansive ports, modern logistics, and sophisticated boardroom environments. We will weave in subtle visual cues pointing to food, manufacturing, and printing sectors without being cliché.</p>
-                </div>
-                <div className="mb-6">
-                  <h4 className="font-bold text-slate-900 text-xl mb-3 flex items-center gap-2">
-                     <div className="w-2 h-2 rounded-full bg-fuchsia-600"></div> Typography Direction
-                  </h4>
-                  <p className="pl-4 border-l border-slate-200">We will implement clean, modern sans-serif typefaces (e.g., Inter or Plus Jakarta Sans) tailored for digital screens. They will ensure impeccable readability for long-form corporate reading while maintaining a sharp, premium aesthetic.</p>
-                </div>
-                <div>
-                  <h4 className="font-bold text-slate-900 text-xl mb-3 flex items-center gap-2">
-                     <div className="w-2 h-2 rounded-full bg-fuchsia-600"></div> Logo Concepting
-                  </h4>
-                  <p className="pl-4 border-l border-slate-200">Developing a bold, timeless logomark and wordmark from scratch that anchors the brand and looks excellent on both digital properties and printed corporate documents.</p>
-                </div>
-              </div>
-            </div>
-          </motion.section>
-
-          {/* 7. Content Strategy */}
-          <motion.section 
-            initial={{ opacity: 0, y: 30 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true, margin: "-50px" }} transition={{ duration: 0.6, ease: "easeOut" }}
-            id="content" className="mb-24 scroll-mt-24">
-            <div className="flex items-center gap-4 mb-8">
-              <div className="w-12 h-12 rounded-xl bg-fuchsia-100 flex items-center justify-center text-fuchsia-600 shrink-0">
-                <MessageSquare className="w-6 h-6" />
-              </div>
-              <h2 className="text-3xl font-bold text-slate-900 tracking-tight">Content Strategy & Copywriting</h2>
-            </div>
-            
-            <div className="bg-slate-900 text-white p-8 md:p-12 rounded-3xl shadow-xl">
-              <p className="text-xl md:text-2xl text-slate-300 mb-10 font-light leading-relaxed max-w-3xl">
-                Great design catches the eye, but <strong className="text-white font-medium">compelling copy closes the deal</strong>. Our copywriting will transform complex global operations into a simple, authoritative, and trustworthy narrative.
-              </p>
-              
-              <div className="grid md:grid-cols-2 gap-6 lg:gap-8">
-                <div className="bg-slate-800/50 backdrop-blur border border-slate-700/50 p-6 md:p-8 rounded-2xl hover:bg-slate-800 transition-colors">
-                  <h4 className="text-xl font-bold text-fuchsia-400 mb-3">1. Brand Messaging</h4>
-                  <p className="text-slate-400 leading-relaxed">Refining your core narrative to focus heavily on legacy, long-term relationships, and the "needle in the haystack" factor. The tone will be confident, professional, and vastly experienced.</p>
-                </div>
-                <div className="bg-slate-800/50 backdrop-blur border border-slate-700/50 p-6 md:p-8 rounded-2xl hover:bg-slate-800 transition-colors">
-                  <h4 className="text-xl font-bold text-fuchsia-400 mb-3">2. Structural Copy</h4>
-                  <p className="text-slate-400 leading-relaxed">Crafting sharp, impactful headlines, scannable service descriptions, and persuasive Calls to Action (CTAs) that guide the user journey intuitively across all 5 pages.</p>
-                </div>
-                <div className="bg-slate-800/50 backdrop-blur border border-slate-700/50 p-6 md:p-8 rounded-2xl md:col-span-2 flex flex-col sm:flex-row items-start gap-6 hover:bg-slate-800 transition-colors">
-                  <div className="w-14 h-14 rounded-full bg-emerald-500/20 text-emerald-400 flex items-center justify-center shrink-0">
-                    <ShieldCheck className="w-7 h-7" />
-                  </div>
-                  <div>
-                    <h4 className="text-xl font-bold text-emerald-400 mb-3">3. Building Credibility Vectors</h4>
-                    <p className="text-slate-400 leading-relaxed text-lg">We will explicitly dedicate copy segments to high-trust indicators: the annual external audits, the upcoming ISO 9001 certification, and your precise vendor philosophy ("only as good as your last performance"). This actively disarms buyer hesitation.</p>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </motion.section>
-
-          {/* 8. Lead Generation */}
-          <motion.section 
-            initial={{ opacity: 0, y: 30 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true, margin: "-50px" }} transition={{ duration: 0.6, ease: "easeOut" }}
-            id="lead-gen" className="mb-24 scroll-mt-24">
-            <div className="flex items-center gap-4 mb-8">
-              <div className="w-12 h-12 rounded-xl bg-fuchsia-100 flex items-center justify-center text-fuchsia-600 shrink-0">
-                <Settings className="w-6 h-6" />
-              </div>
-              <h2 className="text-3xl font-bold text-slate-900 tracking-tight">Lead Generation & Integrations</h2>
-            </div>
-            <p className="text-xl text-slate-600 mb-10 leading-relaxed">
-              A B2B website must be a 24/7 sales mechanism. We ensure that once a prospect is convinced, getting in touch is completely frictionless.
-            </p>
-            <div className="grid md:grid-cols-3 gap-6">
-              <div className="border hover:border-fuchsia-300 border-slate-200 p-8 rounded-2xl bg-white shadow-sm hover:shadow-md transition-all group">
-                <div className="w-16 h-16 rounded-full bg-emerald-50 mb-6 flex items-center justify-center group-hover:scale-110 transition-transform">
-                  <MessageSquare className="w-8 h-8 text-emerald-500" />
-                </div>
-                <h4 className="font-bold text-slate-900 text-xl mb-3">WhatsApp Business</h4>
-                <p className="text-slate-600 leading-relaxed">Floating, immediate-response integration allowing instant messaging from any page, tapping into the speed of global trade.</p>
-              </div>
-              <div className="border hover:border-fuchsia-300 border-slate-200 p-8 rounded-2xl bg-white shadow-sm hover:shadow-md transition-all group">
-                <div className="w-16 h-16 rounded-full bg-blue-50 mb-6 flex items-center justify-center group-hover:scale-110 transition-transform">
-                  <ListChecks className="w-8 h-8 text-blue-500" />
-                </div>
-                <h4 className="font-bold text-slate-900 text-xl mb-3">Smart Forms</h4>
-                <p className="text-slate-600 leading-relaxed">Multi-field contact forms deployed strategically to capture detailed corporate enquiries, filtering and routing leads effectively.</p>
-              </div>
-              <div className="border hover:border-fuchsia-300 border-slate-200 p-8 rounded-2xl bg-white shadow-sm hover:shadow-md transition-all group">
-                <div className="w-16 h-16 rounded-full bg-fuchsia-50 mb-6 flex items-center justify-center group-hover:scale-110 transition-transform">
-                  <Award className="w-8 h-8 text-fuchsia-500" />
-                </div>
-                <h4 className="font-bold text-slate-900 text-xl mb-3">Strategic CTAs</h4>
-                <p className="text-slate-600 leading-relaxed">Persistent calls to action in the main navigation, at the end of service pages, and in the footer so a conversion opportunity is always visible.</p>
-              </div>
-            </div>
-          </motion.section>
-
-          {/* 9. Technical Approach */}
-          <motion.section 
-            initial={{ opacity: 0, y: 30 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true, margin: "-50px" }} transition={{ duration: 0.6, ease: "easeOut" }}
-            id="tech" className="mb-24 scroll-mt-24">
-             <div className="flex items-center gap-4 mb-8">
-              <div className="w-12 h-12 rounded-xl bg-fuchsia-100 flex items-center justify-center text-fuchsia-600 shrink-0">
-                <CodeIcon className="w-6 h-6" />
-              </div>
-              <h2 className="text-3xl font-bold text-slate-900 tracking-tight">Technical Approach</h2>
-            </div>
-            <div className="bg-slate-100 p-8 md:p-12 rounded-3xl">
-              <div className="grid sm:grid-cols-2 gap-8 lg:gap-12 pl-4">
-                <div className="relative">
-                  <div className="absolute -left-8 top-1 w-3 h-3 rounded-full bg-fuchsia-500 ring-4 ring-fuchsia-100"></div>
-                  <h4 className="text-xl font-bold text-slate-900 mb-2">Modern Architecture</h4>
-                  <p className="text-slate-600 leading-relaxed">Developed on a fast, industry-standard modern web stack ensuring robust security and high performance, easily manageable for future content updates.</p>
-                </div>
-                 <div className="relative">
-                  <div className="absolute -left-8 top-1 w-3 h-3 rounded-full bg-fuchsia-500 ring-4 ring-fuchsia-100"></div>
-                  <h4 className="text-xl font-bold text-slate-900 mb-2">Flawless Responsiveness</h4>
-                  <p className="text-slate-600 leading-relaxed">Mobile-first engineering guaranteeing that the website layout adapts perfectly across smartphones, tablets, laptops, and large boardroom displays.</p>
-                </div>
-                 <div className="relative sm:col-span-2 md:w-2/3">
-                  <div className="absolute -left-8 top-1 w-3 h-3 rounded-full bg-fuchsia-500 ring-4 ring-fuchsia-100"></div>
-                  <h4 className="text-xl font-bold text-slate-900 mb-2">SEO-Ready Infrastructure</h4>
-                  <p className="text-slate-600 leading-relaxed">Built with clean code, fast load times, and structured on-page SEO (meta titles, descriptions, and semantic headings) to lay a strong foundation for search engine visibility right from day one.</p>
-                </div>
-              </div>
-            </div>
-          </motion.section>
-
-          {/* 10. Company Profile PDF */}
-          <motion.section 
-            initial={{ opacity: 0, y: 30 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true, margin: "-50px" }} transition={{ duration: 0.6, ease: "easeOut" }}
-            id="pdf" className="mb-24 scroll-mt-24">
-            <div className="flex items-center gap-4 mb-8">
-              <div className="w-12 h-12 rounded-xl bg-fuchsia-100 flex items-center justify-center text-fuchsia-600 shrink-0">
-                <FileBox className="w-6 h-6" />
-              </div>
-              <h2 className="text-3xl font-bold text-slate-900 tracking-tight">Company Profile PDF (Corporate Deck)</h2>
-            </div>
-            
-            <div className="flex flex-col lg:flex-row gap-10 items-start">
-              <div className="lg:w-1/2 space-y-6">
-                <p className="text-xl text-slate-600 leading-relaxed">
-                  To complement the website, we will design a highly professional <strong>8 to 12-page Company Profile PDF</strong>. 
-                </p>
-                <p className="text-lg text-slate-600 leading-relaxed">
-                  This vital digital asset will serve as a powerful leave-behind after B2B meetings and an easily forwardable document via email or WhatsApp. It will share exact visual DNA with the new website for seamless brand consistency.
-                </p>
-                <div className="bg-fuchsia-50 p-6 rounded-xl border border-fuchsia-100">
-                  <h4 className="font-bold text-fuchsia-900 mb-2">Dual Output Formats</h4>
-                  <p className="text-fuchsia-800 text-sm">We provide both a high-resolution version for <strong>professional printing</strong> and a compressed, optimised version perfect for <strong>digital sharing</strong>.</p>
-                </div>
               </div>
               
-              <div className="lg:w-1/2 w-full bg-white border border-slate-200 rounded-2xl shadow-sm hover:shadow-md transition-shadow">
-                <div className="bg-slate-900 px-6 py-4 rounded-t-2xl font-bold text-white tracking-wide">
-                  Proposed Deck Structure
-                </div>
-                <div className="p-6">
-                  <ul className="space-y-4">
-                    {[
-                      "Cover Page",
-                      "About House of Gurnani",
-                      "Legacy & Milestones (1998–Present)",
-                      "Global Presence Map & Logistics",
-                      "Services & Investment Consulting",
-                      "Industries / Specialisations",
-                      "Approach, Philosophy & USP",
-                      "Team & Leadership",
-                      "Certifications & Quality Audits",
-                      "Contact Information"
-                    ].map((item, i) => (
-                      <li key={i} className="flex items-center gap-3 text-slate-700 font-medium">
-                        <div className="w-6 h-6 rounded-full bg-slate-100 flex items-center justify-center text-xs text-slate-400 font-bold shrink-0">{i+1}</div>
-                        {item}
-                      </li>
-                    ))}
-                  </ul>
-                </div>
+              <div className="space-y-4">
+                <h3 className="text-xl font-bold text-slate-900 flex items-center gap-2">
+                  <div className="w-8 h-8 rounded-full bg-fuchsia-50 text-fuchsia-600 flex items-center justify-center"><PenTool className="w-4 h-4"/></div>
+                  Visual Identity & Branding
+                </h3>
+                <p className="text-slate-600 leading-relaxed text-sm">
+                  A custom logomark and an elegant "signature magenta" color palette that balances global authority with your unique flair, utilizing modern typography for maximum readability.
+                </p>
+              </div>
+
+              <div className="space-y-4">
+                <h3 className="text-xl font-bold text-slate-900 flex items-center gap-2">
+                  <div className="w-8 h-8 rounded-full bg-emerald-50 text-emerald-600 flex items-center justify-center"><ShieldCheck className="w-4 h-4"/></div>
+                  Authoritative Copywriting
+                </h3>
+                <p className="text-slate-600 leading-relaxed text-sm">
+                  Transforming complex global operations into a trustworthy narrative. Every section will build credibility, explicitly highlighting your audits, pending ISO certification, and legacy.
+                </p>
+              </div>
+
+              <div className="space-y-4">
+                <h3 className="text-xl font-bold text-slate-900 flex items-center gap-2">
+                  <div className="w-8 h-8 rounded-full bg-blue-50 text-blue-600 flex items-center justify-center"><Settings className="w-4 h-4"/></div>
+                  Lead Generation Focus
+                </h3>
+                <p className="text-slate-600 leading-relaxed text-sm">
+                  Making contact frictionless. We'll integrate quick-action WhatsApp tools, smart routing contact forms, and persistent CTAs across all pages.
+                </p>
+              </div>
+
+              <div className="space-y-4 md:col-span-2 pt-6 mt-2 border-t border-slate-100">
+                <h3 className="text-xl font-bold text-slate-900 flex items-center gap-2">
+                  <div className="w-8 h-8 rounded-full bg-slate-100 text-slate-600 flex items-center justify-center"><FileBox className="w-4 h-4"/></div>
+                  Company Profile PDF (Corporate Deck)
+                </h3>
+                <p className="text-slate-600 leading-relaxed text-sm max-w-3xl">
+                  To complement your website, we will distill the messaging and design into an immaculate 8–12 page digital PDF deck. Perfect as a pristine leave-behind after B2B meetings, tailored for both high-end print and quick corporate sharing across email or WhatsApp.
+                </p>
               </div>
             </div>
           </motion.section>
 
-          {/* 11. Deliverables */}
-          <motion.section 
-            initial={{ opacity: 0, y: 30 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true, margin: "-50px" }} transition={{ duration: 0.6, ease: "easeOut" }}
-            id="deliverables" className="mb-24 scroll-mt-24">
-             <div className="flex items-center gap-4 mb-8">
-              <div className="w-12 h-12 rounded-xl bg-fuchsia-100 flex items-center justify-center text-fuchsia-600 shrink-0">
-                <ListChecks className="w-6 h-6" />
-              </div>
-              <h2 className="text-3xl font-bold text-slate-900 tracking-tight">Project Deliverables Summary</h2>
-            </div>
-            
-            <div className="grid md:grid-cols-2 gap-4">
-              {[
-                "Conceptualisation of visual identity & logo design basis the Magenta theme.",
-                "Custom 5-page responsive B2B website (Home, About, Services, Industries, Contact).",
-                "Full professional copywriting and strategic content development for all web pages.",
-                "Basic on-page SEO setup (Meta data, semantic structure, tags).",
-                "Integration of interactive lead mechanisms (WhatsApp, Routing Contact Forms).",
-                "Design and export of an 8–12 page Company Profile PDF (Digital & Print).",
-                "Complete handover of all source files and administrative access credentials."
-              ].map((del, i) => (
-                <div key={i} className="flex gap-4 bg-white border border-slate-200 p-5 rounded-xl items-start shadow-sm hover:bg-slate-50 transition-colors">
-                  <div className="mt-0.5 w-6 h-6 rounded-full bg-fuchsia-100 text-fuchsia-600 flex items-center justify-center shrink-0">
-                    <CheckCircle2 className="w-4 h-4" />
-                  </div>
-                  <span className="text-slate-700 font-medium leading-snug">{del}</span>
-                </div>
-              ))}
-            </div>
-          </motion.section>
+          {/* 4. Timeline */}
 
-          {/* 12. Timeline */}
           <motion.section 
             initial={{ opacity: 0, y: 30 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true, margin: "-50px" }} transition={{ duration: 0.6, ease: "easeOut" }}
             id="timeline" className="mb-24 scroll-mt-24">
@@ -598,7 +290,7 @@ export default function App() {
             </div>
           </motion.section>
 
-          {/* 13. Investment */}
+          {/* 5. Investment */}
           <motion.section 
             initial={{ opacity: 0, y: 30 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true, margin: "-50px" }} transition={{ duration: 0.6, ease: "easeOut" }}
             id="investment" className="mb-24 scroll-mt-24">
@@ -706,12 +398,14 @@ export default function App() {
             </div>
           </motion.section>
 
-          {/* 14. Why Us */}
+          {/* 5. Why Us & Next Steps */}
           <motion.section 
             initial={{ opacity: 0, y: 30 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true, margin: "-50px" }} transition={{ duration: 0.6, ease: "easeOut" }}
-            id="why-us" className="mb-24 scroll-mt-24">
+            id="next-steps" className="mb-10 scroll-mt-24">
+            
             <h2 className="text-3xl font-bold text-slate-900 mb-8 tracking-tight">Why Partner With Us?</h2>
-            <div className="bg-gradient-to-br from-fuchsia-600 to-fuchsia-800 text-white p-10 md:p-12 rounded-3xl shadow-xl relative overflow-hidden">
+            
+            <div className="bg-gradient-to-br from-fuchsia-600 to-fuchsia-800 text-white p-10 md:p-12 mb-10 rounded-3xl shadow-xl relative overflow-hidden">
               {/* Decorative elements */}
               <div className="absolute top-0 right-0 w-64 h-64 bg-white/10 rounded-full blur-2xl -translate-y-1/2 translate-x-1/2" />
               <div className="absolute bottom-0 left-0 w-64 h-64 bg-black/10 rounded-full blur-2xl translate-y-1/2 -translate-x-1/4" />
@@ -728,12 +422,7 @@ export default function App() {
                 </p>
               </div>
             </div>
-          </motion.section>
 
-          {/* 15. Next Steps */}
-          <motion.section 
-            initial={{ opacity: 0, y: 30 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true, margin: "-50px" }} transition={{ duration: 0.6, ease: "easeOut" }}
-            id="next-steps" className="mb-10 scroll-mt-24">
             <div className="bg-slate-900 text-white p-10 md:p-16 rounded-3xl text-center relative overflow-hidden shadow-2xl">
               <div className="relative z-10">
                 <h2 className="text-3xl md:text-5xl font-extrabold mb-6">Ready to Build the Legacy?</h2>
