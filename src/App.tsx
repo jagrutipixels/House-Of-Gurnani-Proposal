@@ -18,7 +18,9 @@ import {
   Menu,
   X,
   CheckCircle2,
-  ArrowUp
+  ArrowUp,
+  Globe,
+  ExternalLink
 } from 'lucide-react';
 
 export default function App() {
@@ -70,6 +72,7 @@ export default function App() {
     { id: 'cover', label: 'Cover' },
     { id: 'executive-summary', label: 'Executive Summary' },
     { id: 'strategy', label: 'Project Strategy & Approach' },
+    { id: 'recent-work', label: 'Recent Work Preview' },
     { id: 'timeline', label: 'Timeline' },
     { id: 'investment', label: 'Investment & Scope' },
     { id: 'next-steps', label: 'Why Us & Next Steps' },
@@ -237,27 +240,27 @@ export default function App() {
                   Visual Identity & Branding
                 </h3>
                 <p className="text-slate-600 leading-relaxed text-sm">
-                  A custom logomark and an elegant "signature magenta" color palette that balances global authority with your unique flair, utilizing modern typography for maximum readability.
+                  A custom logomark and an elegant "signature magenta" color palette that balances global authority with your unique flair. We will provide the final visual identity and logo definition files from our end for your ongoing use.
                 </p>
               </div>
 
               <div className="space-y-4">
                 <h3 className="text-xl font-bold text-slate-900 flex items-center gap-2">
                   <div className="w-8 h-8 rounded-full bg-emerald-50 text-emerald-600 flex items-center justify-center"><ShieldCheck className="w-4 h-4"/></div>
-                  Authoritative Copywriting
+                  SEO-Optimized Copywriting
                 </h3>
                 <p className="text-slate-600 leading-relaxed text-sm">
-                  Transforming complex global operations into a trustworthy narrative. Every section will build credibility, explicitly highlighting your audits, pending ISO certification, and legacy.
+                  Transforming complex global operations into a trustworthy narrative. The copywriting will naturally integrate an SEO perspective to keep search rankings in mind, fueled by targeted keyword research.
                 </p>
               </div>
 
               <div className="space-y-4">
                 <h3 className="text-xl font-bold text-slate-900 flex items-center gap-2">
                   <div className="w-8 h-8 rounded-full bg-blue-50 text-blue-600 flex items-center justify-center"><Settings className="w-4 h-4"/></div>
-                  Lead Generation Focus
+                  Lead Generation & Email
                 </h3>
                 <p className="text-slate-600 leading-relaxed text-sm">
-                  Making contact frictionless. We'll integrate quick-action WhatsApp tools, smart routing contact forms, and persistent CTAs across all pages.
+                  Making contact frictionless. We'll integrate quick-action WhatsApp tools and smart forms. We're also adding the foundation for email marketing support, enabling us to focus on this in later phases of launch if needed.
                 </p>
               </div>
 
@@ -270,6 +273,97 @@ export default function App() {
                   To complement your website, we will distill the messaging and design into an immaculate 8–12 page digital PDF deck. Perfect as a pristine leave-behind after B2B meetings, tailored for both high-end print and quick corporate sharing across email or WhatsApp.
                 </p>
               </div>
+            </div>
+          </motion.section>
+
+          {/* Recent Work Preview */}
+          <motion.section 
+            initial={{ opacity: 0, y: 30 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true, margin: "-50px" }} transition={{ duration: 0.6, ease: "easeOut" }}
+            id="recent-work" className="mb-24 scroll-mt-24">
+             <div className="flex items-center gap-4 mb-8">
+              <div className="w-12 h-12 rounded-xl bg-fuchsia-100 flex items-center justify-center text-fuchsia-600 shrink-0">
+                <Globe className="w-6 h-6" />
+              </div>
+              <h2 className="text-3xl font-bold text-slate-900 tracking-tight">Recent Work Preview</h2>
+            </div>
+            
+            <p className="text-xl text-slate-600 mb-10 leading-relaxed">
+              Before we build your legacy, here's a glimpse into the digital experiences we've crafted for other premium brands.
+            </p>
+
+            <div className="grid lg:grid-cols-3 gap-6 bg-[#0a0a0a] p-6 sm:p-8 rounded-[2.5rem]">
+              {[
+                { 
+                  name: "Savoir Studio", 
+                  link: "https://www.ssbykmw.com/", 
+                  desc: "Built the full-service content production arm for Karn Marketing Warfare from scratch. Live operational infrastructure.",
+                  image: "https://api.microlink.io/?url=https://www.ssbykmw.com/&screenshot=true&meta=false&embed=screenshot.url",
+                  useIframe: true,
+                  badge: "STUDIO INCEPTION • LIVE",
+                  tags: ["OPERATIONAL INFRASTRUCTURE", "CREATIVE LEADERSHIP", "PRODUCTION PIPELINE"]
+                },
+                { 
+                  name: "CKC Jewellers", 
+                  link: "https://www.krishniahchetty.co/", 
+                  desc: "A robust e-commerce and heritage showcase. Balancing a rich legacy with modern, secure, and seamless digital shopping experiences.",
+                  image: "https://api.microlink.io/?url=https://www.krishniahchetty.co/&screenshot=true&meta=false&embed=screenshot.url",
+                  useIframe: true,
+                  badge: "PREMIUM D2C • LIVE",
+                  tags: ["BRAND IDENTITY", "E-COMMERCE ARCHITECTURE", "UI/UX DESIGN"]
+                },
+                { 
+                  name: "Book Your Voyage", 
+                  link: "https://www.bookyourvoyage.com/product-and-services", 
+                  desc: "A comprehensive travel portal focused on user journey flow, structured service presentation, and frictionless lead generation.",
+                  image: "https://api.microlink.io/?url=https://www.bookyourvoyage.com/product-and-services&screenshot=true&meta=false&embed=screenshot.url",
+                  useIframe: false,
+                  badge: "TRAVEL PORTAL • LIVE",
+                  tags: ["WEBSITE ARCHITECTURE", "DIGITAL STRATEGY", "LEAD GEN"]
+                }
+              ].map((work, idx) => (
+                <a href={work.link} target="_blank" rel="noopener noreferrer" key={idx} className="group flex flex-col bg-[#111111] border border-[#222] rounded-[2rem] hover:border-[#444] transition-all duration-300 overflow-hidden relative">
+                  
+                  {/* Image Header with overlapping Badge */}
+                  <div className="h-64 relative w-full overflow-hidden bg-slate-900 shrink-0 flex items-center justify-center">
+                    <div className="absolute inset-0 bg-black/30 group-hover:bg-black/10 transition-colors duration-500 z-10 pointer-events-none"></div>
+                    
+                    {work.useIframe ? (
+                      <div className="absolute top-0 left-0 w-[400%] h-[400%] origin-top-left scale-[0.25] pointer-events-none transition-transform duration-700 ease-out group-hover:scale-[0.26]">
+                        <iframe src={work.link} title={work.name} className="w-full h-full border-0" tabIndex={-1} aria-hidden="true" />
+                      </div>
+                    ) : (
+                      <img src={work.image} alt={work.name} className="w-full h-full object-cover transition-transform duration-700 ease-out group-hover:scale-105" loading="lazy" />
+                    )}
+                    
+                    {/* Badge */}
+                    <div className="absolute bottom-4 left-0 w-full flex justify-center z-20 pointer-events-none">
+                      <span className="bg-[#2a2a2a]/90 backdrop-blur-md text-white text-[0.65rem] font-bold tracking-[0.2em] px-4 py-2 rounded-full border border-white/10 shadow-xl uppercase">
+                        {work.badge}
+                      </span>
+                    </div>
+                  </div>
+                  
+                  {/* Content Body */}
+                  <div className="p-8 flex-1 flex flex-col bg-[#111111]">
+                    <h3 className="text-3xl font-serif font-bold text-white mb-4 group-hover:text-slate-200 transition-colors">{work.name}</h3>
+                    <p className="text-[#a0a0a0] leading-relaxed text-sm mb-8 flex-1">
+                      {work.desc}
+                    </p>
+                    
+                    {/* Bottom Tags */}
+                    <div className="border-t border-white/10 pt-6 mt-auto">
+                      <div className="flex flex-wrap gap-x-4 gap-y-3">
+                        {work.tags.map((tag, i) => (
+                          <div key={i} className="flex items-center gap-1.5 text-[0.65rem] font-bold tracking-widest text-[#888888] uppercase">
+                            <div className="w-1 h-1 rounded-full bg-[#555]"></div>
+                            {tag}
+                          </div>
+                        ))}
+                      </div>
+                    </div>
+                  </div>
+                </a>
+              ))}
             </div>
           </motion.section>
 
@@ -329,7 +423,7 @@ export default function App() {
                     { name: "Strategy, Architecture & Project Management", price: "₹ 20,000" },
                     { name: "Visual Identity & Logo Definition", price: "₹ 15,000" },
                     { name: "Custom 5-Page Website Design & Development", price: "₹ 60,000" },
-                    { name: "Professional Corporate Copywriting", price: "₹ 25,000" },
+                    { name: "Professional SEO Copywriting & Keyword Research", price: "₹ 25,000" },
                     { name: "8-12 Page Company Profile PDF Design", price: "₹ 15,000" }
                   ].map((item, i) => (
                     <li key={i} className="flex flex-col sm:flex-row sm:justify-between sm:items-center py-5 border-b border-white/10 group hover:bg-white/5 px-4 -mx-4 rounded-lg transition-colors">
@@ -366,7 +460,8 @@ export default function App() {
                 </div>
               </div>
             </div>
-            <p className="text-sm text-slate-500 italic px-4 mb-10">*All statutory taxes applicable extra. Third-party costs (e.g., domain registration, server hosting) are not included unless specified.</p>
+            <p className="text-sm text-slate-500 italic px-4 mb-2 mt-4">*All statutory taxes applicable extra. Third-party costs (e.g., domain registration, server hosting) are not included unless specified.</p>
+            <p className="text-sm text-slate-500 italic px-4 mb-10">*Pricing for website creation covers overall development within the timeline. Any changes requested after the timeline has concluded will be charged at actuals based on requirements. However, we are providing <span className="font-semibold text-slate-700">1 month of complimentary free support</span> post-launch.</p>
 
             <div className="bg-white border border-slate-200 p-6 sm:p-8 md:p-10 rounded-3xl shadow-sm mt-8">
               <h3 className="text-2xl font-bold text-slate-900 mb-6">What Goes Into This Work?</h3>
@@ -387,7 +482,7 @@ export default function App() {
                   <div className="w-10 h-10 rounded-full bg-fuchsia-100 text-fuchsia-600 flex items-center justify-center font-bold shrink-0">2</div>
                   <div>
                     <h4 className="font-bold text-slate-900 text-xl mb-2">Visual Identity & Logo Definition</h4>
-                    <p className="text-slate-600 leading-relaxed"><strong>In simple terms:</strong> The face of your business. We aren't just picking a font and a colour. We are creating a unique, professional brand identity from scratch that conveys trust, global scale, and your decades of legacy. This involves multiple design iterations, colour psychology, and ensuring the logo looks perfect everywhere from a mobile screen to a printed document.</p>
+                    <p className="text-slate-600 leading-relaxed"><strong>In simple terms:</strong> The face of your business. We aren't just picking a font and a colour. We are creating a unique, professional brand identity from scratch that conveys trust, global scale, and your decades of legacy. We will provide the final visual identity and logo definition files as per our end for your records.</p>
                   </div>
                 </div>
                 
@@ -395,15 +490,15 @@ export default function App() {
                   <div className="w-10 h-10 rounded-full bg-fuchsia-100 text-fuchsia-600 flex items-center justify-center font-bold shrink-0">3</div>
                   <div>
                     <h4 className="font-bold text-slate-900 text-xl mb-2">Custom 5-Page Website Design & Development</h4>
-                    <p className="text-slate-600 leading-relaxed"><strong>In simple terms:</strong> The actual build. This is the heavy lifting. First, we custom-design each page so it looks premium and exact. Then, our developers write the code to bring it to life. This step ensures the website loads instantly, looks perfect on every phone, tablet, and computer, is secure from hackers, and is structured perfectly so Google can eventually read and rank it.</p>
+                    <p className="text-slate-600 leading-relaxed"><strong>In simple terms:</strong> The actual build. We custom-design each page so it looks premium, then our developers write the code to bring it to life. The pricing here is for the overall development. Any changes after the timeline will be charged per actual requirements, but you get complimentary 1 month free support.</p>
                   </div>
                 </div>
                 
                 <div className="flex flex-col md:flex-row gap-4 md:gap-6 items-start">
                   <div className="w-10 h-10 rounded-full bg-fuchsia-100 text-fuchsia-600 flex items-center justify-center font-bold shrink-0">4</div>
                   <div>
-                    <h4 className="font-bold text-slate-900 text-xl mb-2">Professional Corporate Copywriting</h4>
-                    <p className="text-slate-600 leading-relaxed"><strong>In simple terms:</strong> The sales pitch. We don't just ask you for text to paste on the site. We have professional copywriters digest your complex business, your USP of "finding needles in haystacks," and your 1998 legacy, and turn that into persuasive, scannable, and engaging text. Great copy is what convinces a visitor to click the "Contact Us" button.</p>
+                    <h4 className="font-bold text-slate-900 text-xl mb-2">SEO Copywriting & Keyword Research</h4>
+                    <p className="text-slate-600 leading-relaxed"><strong>In simple terms:</strong> The sales pitch. We have professionals digest your complex business and write persuasive text. The copywriting is crafted from an SEO perspective to keep ranking in mind. The research is charged for the keyword finding as per your business needs, and we will be sharing the targeted keywords with you.</p>
                   </div>
                 </div>
                 
